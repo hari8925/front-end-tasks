@@ -1,106 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap");
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "poppins";
 }
-
-.container {
-  width: 100%;
-  min-height: 100vh;
-  background-image: url(./images/bg-1.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 10px;
+body {
+  overflow-x: hidden;
 }
-.to-do-list {
+h1 {
+  font-family: "Dancing script", cursive !important;
+}
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 400px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
   background-color: white;
-  width: 100%;
-  max-width: 540px;
-  margin: 100px auto 20px;
-  padding: 40px 30px 70px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
 }
-.to-do-list h1 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  justify-content: center;
-  color: #973dc2;
-}
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #edeef0;
-  border-radius: 30px;
-  padding-left: 20px;
-  margin-bottom: 25px;
-}
-input {
-  border: none;
-  flex: 1;
-  outline: none;
-  padding: 10px;
-  font-weight: 14px;
-  background: transparent;
-}
-button {
-  padding: 16px 50px;
-  border-radius: 40px;
-  outline: none;
-  border: none;
-  color: #fff;
-  background: #973dc2;
-  cursor: pointer;
-  font-size: 16px;
-}
-ul li {
-  list-style: none;
-  font-size: 17px;
-  padding: 14px 8px 12px 50px;
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-}
-ul li::before {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  width: 23px;
-  height: 23px;
-  background-image: url(./images/unchecked.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  top: 12px;
-  left: 8px;
-}
-ul li.checked {
-  color: #555;
-  text-decoration: line-through;
-}
-ul li.checked::before {
-  background-image: url(./images/checked.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-ul li span {
-  position: absolute;
+.cart-active {
   right: 0;
-  top: 5px;
-  line-height: 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 30px;
-  color: #555;
-  text-align: center;
+  transition: 0.5s;
 }
-ul li span:hover {
-  background-color: #edeef0;
+.cart-tittle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+.cart-box {
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+.cart-img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+.detail-box {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.price-box {
+  display: flex;
+  justify-content: space-around;
+}
+.cart-food-tittle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #42382ffd;
+  font-weight: 500;
+}
+.cart-price {
+  font-weight: 500;
+}
+.cart-quantity {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.cart-remove {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+}
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+.total-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.total-price {
+  margin-left: 0.5rem;
+}
+.btn-buy {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: orangered;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid black;
+}
+.btn-buy:hover {
+  background-color: orangered;
+  color: white;
+}
+#cart-close {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  font-size: 2rem;
+  cursor: pointer;
 }
